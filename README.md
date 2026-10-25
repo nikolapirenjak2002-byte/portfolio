@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nikola — Freelance dizajner
 
-## Getting Started
+Portfolio sajt napravljen uz Next.js App Router, TypeScript i Tailwind CSS v4.
 
-First, run the development server:
+## Lokalni razvoj
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Otvori [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Provere
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+Build pravi statički sajt u `out/`. Kontakt forma sastavlja email i otvara email
+aplikaciju; promeni adresu `besavenow.official@gmail.com` u
+`components/contact-form.tsx` i `app/kontakt/page.tsx` ako je potrebno.
 
-To learn more about Next.js, take a look at the following resources:
+## GitHub Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+GitHub Actions workflow u `.github/workflows/deploy.yml` automatski gradi i
+objavljuje sajt nakon svakog push-a na `main`. U GitHub repozitorijumu otvori
+**Settings → Pages** i postavi **Build and deployment → Source** na **GitHub
+Actions**. Projekat koristi odgovarajući `basePath` za projektne GitHub Pages
+URL-ove.
